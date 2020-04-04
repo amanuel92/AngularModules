@@ -1,0 +1,55 @@
+#reactive forms 
+Reactive forms provide a model-driven approach to handling form inputs whose values change over time. 
+
+
+need to bring in these imports to create reactive form : 
+-ReactiveFormsModule, 
+
+-FormControl
+To register a single form control, import the FormControl class 
+into your component and create a new instance of the form control to save as a class property.
+
+-FormGroup 
+Helps bring together a set of form controls (form fields that are associated with form controls)
+
+-FormBuilder
+we'll use to create instance of formgroup that will have a form 
+control for each field/input. 
+
+Validator : used to set validation requirements on form controls , use .compose function and pass array of validators
+validators.compose([validators.required])
+
+
+
+steps 
+define the form model by FormGroup and FormControl instances in the component's class.
+
+
+idea : 
+http://form.jotformpro.com/form/41662428144958?
+
+reference 
+https://dev.to/nileshsanyal/the-comprehensive-guide-to-angular-8-reactive-forms-4i5g
+
+
+other things learned 
+
+***css/styling stuff******
+box-sizing CSS property sets how the total width and height of an element is calculated
+border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width. This typically makes it much easier to size elements.
+On the other hand, when using position: relative or position: absolute, use of box-sizing: content-box allows the positioning values to be relative to the content, and independent of changes to border and padding sizes, which is sometimes desireable.
+
+
+*****set up stuff*****
+//this updates package.json and adds library installed to list of depedencies
+npm install --save <lib/other name like bootstrap>
+
+//after installing libraries 
+edit angular.json and add path to new library to 
+projects->architect->build->
+for bootstrap i.e 
+node_modules/bootstrap/dist/js/bootstrap.js
+
+
+
+

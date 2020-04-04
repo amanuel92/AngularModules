@@ -1,0 +1,40 @@
+
+.form-row {
+    margin: 20px;
+}
+
+.form-field div{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0px;
+}
+
+.form-label label {
+    font-size: 10px;
+    margin-bottom: 2px;
+    width: 100%;
+}
+.input-field input{
+    font-size: 12px;
+    width: 100%;
+}
+.error-container p {
+    color: red;
+    font-size: 10px;
+    margin-top: 4px;
+    width: 100%;
+}
+.form-field button {
+    font-size: 10px;
+    background-color: black;
+    color: white;
+}
+.disable-button {
+    font-size: 10px;
+    background-color: lightgray;
+    color: black;
+}
+
+.inputError {
+    border-right: 3px solid red;
+}
