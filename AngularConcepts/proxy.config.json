@@ -1,0 +1,9 @@
+
+{
+    "/api": {
+          "target": "https://www.zipcodeapi.com/rest/",
+          "secure": false,
+          "pathRewrite": {"^/api" : ""},
+          "changeOrigin": true
+    }
+}

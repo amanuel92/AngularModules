@@ -1,87 +1,133 @@
 <div class="container">
+            <div *ngIf="displayAlert" class="row form-row alert-container">
+                <div class="col-sm-10 alert alert-danger" role="alert">
+                    {{displayAlertMessage}}
+                </div>
+            </div>
             <form *ngIf="!isFormComplete" [formGroup]="jobForm" (ngSubmit)="formSubmission()">
                 <div class="row form-row">
                     <div class="col-sm-5 form-field">
                         <div class="row form-label">
-                            <label>{{jobFormContent.FirstName.Label}}</label>
+                            <label class="regular">{{jobFormContent.FirstName.Label}}</label>
                         </div>
-                        <div class="row input-field">
-                            <input [ngClass]="{'inputError': (jobForm.controls['firstName'].errors && (jobForm.controls['firstName'].touched || jobForm.controls['firstName'].dirty))}" [placeholder]="jobFormContent.FirstName.PlaceHolder" [(ngModel)]="jobApplicant.FirstName" formControlName="firstName" >
+                        <div class="row form-input">
+                            <input class="form-control form-control-sm" 
+                            [ngClass]="{'error': (jobForm.controls['firstName'].errors && (jobForm.controls['firstName'].touched || jobForm.controls['firstName'].dirty)), 
+                            'success': jobForm.controls['firstName'].valid}" 
+                            [placeholder]="jobFormContent.FirstName.PlaceHolder" 
+                            [(ngModel)]="jobApplicant.FirstName" formControlName="firstName" >
                         </div>
-                        <div class="row error-container">
-                            <p *ngIf="jobForm.controls['firstName'].errors && (jobForm.controls['firstName'].touched || jobForm.controls['firstName'].dirty)" class="error-message">{{jobFormContent.FirstName.ErrorMessage}}</p>
+                        <div class="row form-message">
+                            <p *ngIf="jobForm.controls['firstName'].errors && (jobForm.controls['firstName'].touched || jobForm.controls['firstName'].dirty)" class="error">{{jobFormContent.FirstName.ErrorMessage}}</p>
                         </div>  
                     </div>       
                     <div class="col-sm-5 form-field">
                         <div class="row form-label">
-                            <label>{{jobFormContent.LastName.Label}}</label>
+                            <label class="regular">{{jobFormContent.LastName.Label}}</label>
                         </div>
-                        <div class="row input-field">
-                            <input [ngClass]="{'inputError': (jobForm.controls['lastName'].errors && (jobForm.controls['lastName'].touched || jobForm.controls['lastName'].dirty))}" [placeholder]="jobFormContent.LastName.PlaceHolder" [(ngModel)]="jobApplicant.LastName" formControlName="lastName" >
+                        <div class="row  form-input">
+                            <input class="form-control form-control-sm" 
+                            [ngClass]="{'error': (jobForm.controls['lastName'].errors && (jobForm.controls['lastName'].touched || jobForm.controls['lastName'].dirty)),
+                            'success': jobForm.controls['lastName'].valid}" 
+                            [placeholder]="jobFormContent.LastName.PlaceHolder" 
+                            [(ngModel)]="jobApplicant.LastName" formControlName="lastName" >
                         </div>
-                        <div class="row error-container">
-                            <p *ngIf="jobForm.controls['lastName'].errors && (jobForm.controls['lastName'].touched || jobForm.controls['lastName'].dirty)" class="error-message">{{jobFormContent.LastName.ErrorMessage}}</p>
+                        <div class="row form-message">
+                            <p *ngIf="jobForm.controls['lastName'].errors && (jobForm.controls['lastName'].touched || jobForm.controls['lastName'].dirty)" class="error">{{jobFormContent.LastName.ErrorMessage}}</p>
                         </div>  
                     </div>
                 </div>
                 <div class="row form-row">
                     <div class="col-sm-10 form-field">
                             <div class="row form-label">
-                                <label>{{jobFormContent.Street.Label}}</label>
+                                <label class="regular">{{jobFormContent.Street.Label}}</label>
                             </div>
-                            <div class="row input-field">
-                                <input [ngClass]="{'inputError': (jobForm.controls['street'].errors && (jobForm.controls['street'].touched || jobForm.controls['street'].dirty))}" [placeholder]="jobFormContent.Street.PlaceHolder" [(ngModel)]="jobApplicant.street" formControlName="street" >
+                            <div class="row  form-input">
+                                <input class="form-control form-control-sm" 
+                                [ngClass]="{'error': (jobForm.controls['street'].errors && (jobForm.controls['street'].touched || jobForm.controls['street'].dirty)), 
+                                'success': jobForm.controls['street'].valid}" 
+                                [placeholder]="jobFormContent.Street.PlaceHolder" 
+                                [(ngModel)]="jobApplicant.street" formControlName="street" >
                             </div>
-                            <div class="row error-container">
-                                <p *ngIf="jobForm.controls['street'].errors && (jobForm.controls['street'].touched || jobForm.controls['street'].dirty)" class="error-message">{{jobFormContent.Street.ErrorMessage}}</p>
+                            <div class="row form-message">
+                                <p *ngIf="jobForm.controls['street'].errors && (jobForm.controls['street'].touched || jobForm.controls['street'].dirty)" class="error">{{jobFormContent.Street.ErrorMessage}}</p>
                             </div> 
                     </div>
                 </div>
                 <div class="row form-row">
                         <div class="col-sm-4 form-field">
                                 <div class="row form-label">
-                                    <label>{{jobFormContent.City.Label}}</label>
+                                    <label class="regular">{{jobFormContent.City.Label}}</label>
                                 </div>
-                                <div class="row input-field">
-                                    <input [ngClass]="{'inputError': (jobForm.controls['city'].errors && (jobForm.controls['city'].touched || jobForm.controls['city'].dirty))}" [placeholder]="jobFormContent.City.PlaceHolder" [(ngModel)]="jobApplicant.city" formControlName="city" >
+                                <div class="row  form-input">
+                                    <input class="form-control form-control-sm" 
+                                    [ngClass]="{'error': (jobForm.controls['city'].errors && (jobForm.controls['city'].touched || jobForm.controls['city'].dirty)), 
+                                    'success': jobForm.controls['city'].valid}" 
+                                    [placeholder]="jobFormContent.City.PlaceHolder" 
+                                    [(ngModel)]="jobApplicant.city" formControlName="city" >
                                 </div>
-                                <div class="row error-container">
-                                    <p *ngIf="jobForm.controls['city'].errors && (jobForm.controls['city'].touched || jobForm.controls['city'].dirty)" class="error-message">{{jobFormContent.City.ErrorMessage}}</p>
+                                <div class="row form-message">
+                                    <p *ngIf="jobForm.controls['city'].errors && (jobForm.controls['city'].touched || jobForm.controls['city'].dirty)" class="error">{{jobFormContent.City.ErrorMessage}}</p>
                                 </div>  
                         </div> 
                         <div class="col-sm-6 form-field">
                                 <div class="row form-label">
-                                    <label>{{jobFormContent.State.Label}}</label>
+                                    <label class="regular">{{jobFormContent.State.Label}}</label>
                                 </div>
-                                <div class="row input-field">
-                                    <input [ngClass]="{'inputError': (jobForm.controls['state'].errors && (jobForm.controls['state'].touched || jobForm.controls['state'].dirty))}" [placeholder]="jobFormContent.State.PlaceHolder" [(ngModel)]="jobApplicant.state" formControlName="state" >
+                                <div class="row  form-input">
+                                    <select class="form-control form-control-sm" 
+                                    [ngClass]="{'error': (jobForm.controls['state'].errors && (jobForm.controls['state'].touched || jobForm.controls['state'].dirty)), 
+                                    'success': jobForm.controls['state'].valid}" 
+                                    [(ngModel)]="jobApplicant.state" formControlName="state">
+                                        <option *ngFor="let state of jobFormContent.State.Options.US">
+                                            {{state}}
+                                        </option>        
+                                    </select>
+                                    <!---
+                                    <select *ngIf="jobForm.country.value === 'CANADA'" [ngClass]="{'error': (jobForm.controls['state'].errors && (jobForm.controls['state'].touched || jobForm.controls['state'].dirty))}" [(ngModel)]="jobApplicant.state" formControlName="state">
+                                            <option *ngFor="let state of jobFormContent.State.Options.CAN">
+                                                {{state}}
+                                            </option>        
+                                    </select> 
+                                    --->
                                 </div>
-                                <div class="row error-container">
-                                    <p *ngIf="jobForm.controls['state'].errors && (jobForm.controls['state'].touched || jobForm.controls['state'].dirty)" class="error-message">{{jobFormContent.State.ErrorMessage}}</p>
+                                <div class="row form-message">
+                                    <p *ngIf="jobForm.controls['state'].errors && (jobForm.controls['state'].touched || jobForm.controls['state'].dirty)" class="error">{{jobFormContent.State.ErrorMessage}}</p>
                                 </div>  
                         </div>   
                 </div>
                 <div class="row form-row">
                         <div class="col-sm-4 form-field">
                                 <div class="row form-label">
-                                    <label>{{jobFormContent.ZipCode.Label}}</label>
+                                    <label class="regular">{{jobFormContent.ZipCode.Label}}</label>
                                 </div>
-                                <div class="row input-field">
-                                    <input [ngClass]="{'inputError': (jobForm.controls['zipCode'].errors && (jobForm.controls['zipCode'].touched || jobForm.controls['zipCode'].dirty))}" [placeholder]="jobFormContent.ZipCode.PlaceHolder" [(ngModel)]="jobApplicant.zipCode" formControlName="zipCode" >
+                                <div class="row  form-input">
+                                    <input class="form-control form-control-sm" minlength="5" maxlength="5" 
+                                    [ngClass]="{'error': (jobForm.controls['zipCode'].errors && (jobForm.controls['zipCode'].touched || jobForm.controls['zipCode'].dirty)), 
+                                    'success': jobForm.controls['zipCode'].valid}" 
+                                    [placeholder]="jobFormContent.ZipCode.PlaceHolder" 
+                                    [(ngModel)]="jobApplicant.zipCode" formControlName="zipCode" (blur)="fillInCityState($event)">
                                 </div>
-                                <div class="row error-container">
-                                    <p *ngIf="jobForm.controls['zipCode'].errors && (jobForm.controls['zipCode'].touched || jobForm.controls['zipCode'].dirty)" class="error-message">{{jobFormContent.ZipCode.ErrorMessage}}</p>
+                                <div class="row form-message">
+                                    <p *ngIf="jobForm.controls['zipCode'].errors && (jobForm.controls['zipCode'].touched || jobForm.controls['zipCode'].dirty)" class="error">{{jobFormContent.ZipCode.ErrorMessage}}</p>
                                 </div>  
                         </div> 
                         <div class="col-sm-6 form-field">
                                 <div class="row form-label">
-                                    <label>{{jobFormContent.Country.Label}}</label>
+                                    <label class="regular">{{jobFormContent.Country.Label}}</label>
                                 </div>
-                                <div class="row input-field">
-                                    <input [ngClass]="{'inputError': (jobForm.controls['country'].errors && (jobForm.controls['country'].touched || jobForm.controls['country'].dirty))}" [placeholder]="jobFormContent.Country.PlaceHolder" [(ngModel)]="jobApplicant.country" formControlName="country" >
+                                <div class="row  form-input">
+                                    <select class="form-control form-control-sm" 
+                                    [ngClass]="{'error': (jobForm.controls['country'].errors && (jobForm.controls['country'].touched || jobForm.controls['country'].dirty)),
+                                    'success': jobForm.controls['country'].valid}" 
+                                    [(ngModel)]="jobApplicant.country" formControlName="country">
+                                        <option *ngFor="let country of jobFormContent.Country.Options">
+                                            {{country}}
+                                        </option>        
+                                    </select>                                
                                 </div>
-                                <div class="row error-container">
-                                    <p *ngIf="jobForm.controls['country'].errors && (jobForm.controls['country'].touched || jobForm.controls['country'].dirty)" class="error-message">{{jobFormContent.Country.ErrorMessage}}</p>
+                                <div class="row form-message">
+                                    <p *ngIf="jobForm.controls['country'].errors && (jobForm.controls['country'].touched || jobForm.controls['country'].dirty)" class="error">{{jobFormContent.Country.ErrorMessage}}</p>
                                 </div>  
                         </div>   
                 </div>

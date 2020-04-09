@@ -14,7 +14,7 @@ export interface JobFormField {
     Label: string;
     PlaceHolder : string;
     ErrorMessage : string;
-    Options: any [];
+    Options: any;
 }
 export interface JobApplicant {
     FirstName: string;

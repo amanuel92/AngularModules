@@ -1,0 +1,120 @@
+/**
+reference : https://devhints.io/sass
+
+set variable repeatdly used properties 
+create class that can be extended 
+
+style for buttons, input fields, and other components of page
+
+form 
+    form-row
+        form-field
+            form-label / (form-component)
+            form-input / (form-component)
+                error
+                success 
+            form-message / (form-component)
+                error
+
+tips
+two (2) spaces indents, no tabs
+ideally, 80-characters wide lines or less
+meaningful use of whitespace
+use comments to explain CSS operations
+**/
+
+
+/**********************************/
+$error-color: red;
+$success-color: green;
+
+
+$full-width: 100%;
+
+.form-component {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0px;
+}
+
+.input-component {
+    * {
+        font-size: 12px;
+        width: 100%;
+    }
+
+}
+/**********************************/
+
+
+
+.form-row {
+    margin: 5px;
+}
+
+.form-label {
+
+    /**can add different type of labels here**/
+    @extend .form-component;
+
+    .regular {
+    font-size: 10px;
+    margin-bottom: 2px;
+    width: 100%;
+    }
+}
+
+.form-input {
+
+    /**can add different type of input styles here**/
+
+    @extend .input-component;
+    @extend .form-component;
+
+    .error {
+        border-right: 3px solid $error-color;
+    }
+
+    .success {
+        border-right: 3px solid $success-color;
+    }
+}
+
+.form-message {
+    
+    height: 28px;
+    @extend .form-component;
+
+    .error {
+        color: $error-color;
+        font-size: 10px;
+        margin-top: 4px;
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+button {
+        font-size: 10px;
+        background-color: black;
+        color: white;
+    }
+
+
+
+
+
+
+.disable-button {
+    font-size: 10px;
+    background-color: lightgray;
+    color: black;
+}
+
+.inputError {
+    border-right: 3px solid $error-color;
+}

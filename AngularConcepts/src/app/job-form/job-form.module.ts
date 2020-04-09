@@ -8,12 +8,16 @@ import { JobFormComponent } from './job-form.component';
 //needed to create reactive form 
 import { ReactiveFormsModule } from '@angular/forms';
 
+//needed to make api calls
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [JobFormComponent],
   imports: [
     CommonModule,
     JobFormRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class JobFormModule { }
